@@ -5,3 +5,5 @@ router = APIRouter(prefix="/users", tags=["users"])
 @router.get("/")
 async def list_users():
     pass
+
+
