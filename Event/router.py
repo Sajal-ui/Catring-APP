@@ -10,9 +10,7 @@ async def list_events(db:CustomSession = Depends(get_db)):
 
 @router.post("/", response_model=EventParser)
 async def create_event(event: EventParser, db:CustomSession = Depends(get_db)):
-   event_instance = Event(
-      display_name=event.display_name
-   )
+   event_instance = Event(display_name=event.display_name)
    db.add(event_instance)
    db.commit()
    db.refresh(event_instance)
