@@ -13,7 +13,7 @@ async def create_event(facility: FacilityParser, db:CustomSession = Depends(get_
    facility_instance = Facility(display_name=facility.display_name, status=facility.status)
    db.add(facility_instance)
    db.commit()
-   db.refresh(facility_instance)
+   db.refresh(facility_instance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
    return facility_instance
 
 @router.get("/{id}", response_model=FacilityParser)
