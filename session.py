@@ -1,13 +1,14 @@
 from datetime import datetime
-from sqlachemy.orm import Session
+from sqlalchemy.orm import Session
+from sqlalchemy import inspect
 
-class DBSession(Session):
+class CustomSession(Session):
     def delete(self, instance):
         if hasattr(instance, 'deleted_at'):
             instance.deleted_at = datetime.now()
-            self.add(obj)  # mark as dirty instead of deleting
+            self.add(instance)  # mark as dirty instead of deleting
         else:
-            super().delete(obj)
+            super().delete(instance)
 
     def commit(self):
         for obj in self.new:

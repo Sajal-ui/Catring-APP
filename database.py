@@ -2,6 +2,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from .session import CustomSession
+
 # PostgreSQL connection URL (adjust accordingly)
 SQLALCHEMY_DATABASE_URL = "postgresql://user:password@localhost:5432/mydb"  # Change to your DB info
 
