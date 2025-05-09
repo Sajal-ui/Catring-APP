@@ -1,5 +1,7 @@
-from Event.parsers import EventParser
-from fastapi import APIRouter
+from .parsers import EventParser
+from fastapi import APIRouter, Depends
+
+from CatringApp.database import get_db
 
 router = APIRouter(prefix="/events", tags=["events"])
 

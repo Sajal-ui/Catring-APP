@@ -1,5 +1,8 @@
-from Facility.parsers import EditFacilityParser, FacilityParser
-from fastapi import APIRouter
+from .parsers import EditFacilityParser, FacilityParser
+from fastapi import APIRouter, Depends
+
+from ..database import get_db
+from .models import Facility
 
 router = APIRouter(prefix="/facility", tags=["facility"])
 
