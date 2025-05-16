@@ -1,12 +1,17 @@
-from pydantic import BaseModel, Json
+import uuid
+from pydantic import BaseModel, Field
+
+class MultilingualText(BaseModel):
+    en: str
+    hi: str
 
 class EventParser(BaseModel):
-    id: int
-    display_name: Json
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    display_name: MultilingualText
 
     class Config:
         orm_mode = True
 
 
 class EditEventParser(BaseModel):
-    display_name: Json
+    display_name: MultilingualText

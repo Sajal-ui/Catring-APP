@@ -5,16 +5,15 @@ class MultilingualText(BaseModel):
     en: str
     hi: str
 
-class FacilityParser(BaseModel):
+class ItemCategoryParser(BaseModel):
    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-   display_name: MultilingualText
+   name: MultilingualText
    status: MultilingualText
 
    class Config:
       orm_mode = True
 
 
-class EditFacilityParser(BaseModel):
-   display_name: MultilingualText
+class EditItemCatgoryParser(BaseModel):
+   name: MultilingualText
    status: MultilingualText
-      

@@ -28,9 +28,10 @@ shellingham
 sniffio
 starlette
 typer
-typing-inspection
+# typing-inspection 
 typing_extensions
 uvicorn
-uvloop
+# uvloop
 watchfiles
 websockets
+psycopg2-binary
