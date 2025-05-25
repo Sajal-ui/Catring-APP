@@ -1,8 +1,8 @@
 from .parsers import EventParser, EditEventParser
 from fastapi import APIRouter, Depends
 
-from CatringApp.database import get_db
-from CatringApp.session import CustomSession
+from ..database import get_db
+from ..session import CustomSession
 
 Event_db = []
 
