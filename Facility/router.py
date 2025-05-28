@@ -3,7 +3,11 @@ from fastapi import APIRouter
 
 # from ..database import get_db
 from .models import Facility
+<<<<<<< HEAD
 # from CatringApp.session import CustomSession
+=======
+from ..session import CustomSession
+>>>>>>> 42df18228bf6fe8ee37dc5282ef3406078f3bd88
 
 Facility_db = []
 
